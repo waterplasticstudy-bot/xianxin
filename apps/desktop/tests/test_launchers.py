@@ -76,8 +76,9 @@ class LauncherCase(unittest.TestCase):
                               '-Port', self.port, '-DataDir', self.data)
         self.assertEqual(started.returncode, 0, started.stdout + started.stderr)
         health = self.request('/api/health')
-        self.assertEqual(Path(health['appDir']), ROOT)
-        self.assertEqual(Path(health['dataDir']), self.data)
+        # Hosted Windows may expose TEMP through an 8.3 alias; compare identity.
+        self.assertTrue(Path(health['appDir']).samefile(ROOT))
+        self.assertTrue(Path(health['dataDir']).samefile(self.data))
         refused = self.script('Stop-Studio.ps1', '-Port', self.port, '-DataDir', self.data.parent / 'wrong')
         self.assertNotEqual(refused.returncode, 0)
         self.assertEqual(self.request('/api/health')['pid'], health['pid'])
@@ -111,7 +112,7 @@ class LauncherCase(unittest.TestCase):
     def test_discovers_an_installed_python_without_explicit_path(self):
         started = self.script('Start-Studio.ps1', '-NoBrowser', '-Port', self.port, '-DataDir', self.data)
         self.assertEqual(started.returncode, 0, started.stdout + started.stderr)
-        self.assertEqual(Path(self.request('/api/health')['dataDir']), self.data)
+        self.assertTrue(Path(self.request('/api/health')['dataDir']).samefile(self.data))
         stopped = self.script('Stop-Studio.ps1', '-Port', self.port, '-DataDir', self.data)
         self.assertEqual(stopped.returncode, 0, stopped.stdout + stopped.stderr)
 
