@@ -1,0 +1,12 @@
+.hvigor/
+.build-cache/
+oh_modules/
+entry/build/
+build/
+local.properties
+*.p12
+*.cer
+*.p7b
+*.keystore
+*.jks
+tests/.compiled/

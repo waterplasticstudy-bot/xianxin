@@ -1,0 +1,10 @@
+{
+  "app": {
+    "bundleName": "com.xuxian.learningstudio",
+    "vendor": "xuxian",
+    "versionCode": 1001006,
+    "versionName": "1.1.6",
+    "icon": "$media:xianxin_icon",
+    "label": "$string:app_name"
+  }
+}

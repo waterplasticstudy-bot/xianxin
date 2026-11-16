@@ -1,0 +1,23 @@
+name: Source and desktop checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  desktop:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Public source and preserved mobile baseline
+        run: python scripts/verify-repository.py
+      - name: Shared video resources
+        run: python scripts/sync-video-catalog.py --check
+      - name: Desktop JavaScript
+        run: node --check apps/desktop/static/app.js
+      - name: Desktop regression
+        run: python -m unittest discover -s apps/desktop/tests -p "test_*.py"

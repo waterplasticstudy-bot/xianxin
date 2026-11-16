@@ -1,0 +1,2005 @@
+{
+  "version": 1,
+  "modules": [
+    {
+      "id": "c-foundations",
+      "title": "C 语言，从零开始",
+      "subtitle": "14 节课程 · 从手机上的基础练习开始",
+      "description": "从第一行输出，到数组、指针和位操作。",
+      "icon": "code",
+      "order": 1
+    },
+    {
+      "id": "stm32-path",
+      "title": "走近 STM32",
+      "subtitle": "6 节软件与原理课 · 暂时不需要开发板",
+      "description": "沿HAL路线理解工程与外设，保留明确的硬件验证边界。",
+      "icon": "chip",
+      "order": 2
+    },
+    {
+      "id": "cpp-path",
+      "title": "下一站，C++",
+      "subtitle": "1 节入门衔接 · 让已有基础继续生长",
+      "description": "先理解引用与学习顺序，后续再开展C++项目。",
+      "icon": "book",
+      "order": 3
+    }
+  ],
+  "lessons": [
+    {
+      "id": "c-01",
+      "moduleId": "c-foundations",
+      "order": 1,
+      "title": "你好，C 语言",
+      "subtitle": "让程序执行你的第一条指令。",
+      "minutes": 35,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "分清源代码、编译和运行",
+        "修改并运行一个完整C程序"
+      ],
+      "sections": [
+        {
+          "title": "一段文字如何变成程序",
+          "body": "你写的 .c 文件是源代码。在电脑上，编译器把它翻译并链接成可执行程序，运行时才产生输出。本 App 使用手机 C 学习解释器直接解析并执行基础语法，不调用 GCC，也不生成 ARM 固件。遇到错误先读第一条提示，修改后再运行；完整 C 编译练习仍在电脑端完成。"
+        },
+        {
+          "title": "从 main 开始",
+          "body": "程序从 main 函数开始执行。花括号包住函数内容；printf 把文字送到输出区；语句末尾的分号表示结束。return 0 表示正常结束。先改文字，再观察结果，不要求今天背下全部术语。",
+          "code": "#include <stdio.h>\n\nint main(void) {\n    printf(\"Hello, world!\\n\");\n    return 0;\n}"
+        },
+        {
+          "title": "练习时怎么操作",
+          "body": "在代码框中填写代码，然后点击运行检测。输入由题目自动提供；请只输出题目要求的内容，不额外输出“请输入”。下方会显示每个测试的预期与实际结果。"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p2"
+      ],
+      "exerciseIds": [
+        "c-01-quiz",
+        "c-01-code"
+      ],
+      "takeaway": "电脑通常先编译再运行；手机学习解释器直接执行支持的 C 子集，两者都要检查实际输出。"
+    },
+    {
+      "id": "c-02",
+      "moduleId": "c-foundations",
+      "order": 2,
+      "title": "让输出井井有条",
+      "subtitle": "理解换行、字符串和常见语法错误。",
+      "minutes": 35,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "使用换行符",
+        "读懂缺少分号一类的编译错误"
+      ],
+      "sections": [
+        {
+          "title": "换行也是一个字符",
+          "body": "在C字符串里，\\n 表示换行。它由键盘输入的反斜杠和字母n组成，但运行后显示为换行，而不是两个普通字符。双引号界定字符串，不能换成中文引号。"
+        },
+        {
+          "title": "从错误学起",
+          "body": "删掉分号再运行检测，观察错误行号。手机解释器或电脑编译器通常从错误附近报告问题，真正缺少的符号也可能在上一行。一次修复最前面的一个问题，比同时改很多地方容易核对。",
+          "code": "printf(\"Learning C\\n\");\nprintf(\"One step at a time\\n\");"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p3"
+      ],
+      "exerciseIds": [
+        "c-02-quiz",
+        "c-02-code"
+      ],
+      "takeaway": "先读第一条错误，逐个修复；\\n 控制换行。"
+    },
+    {
+      "id": "c-03",
+      "moduleId": "c-foundations",
+      "order": 3,
+      "title": "用变量保存信息",
+      "subtitle": "给数据起一个能读懂的名字。",
+      "minutes": 45,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "声明和赋值整数变量",
+        "用%d输出整数"
+      ],
+      "sections": [
+        {
+          "title": "变量是一块有名字的存储空间",
+          "body": "int length = 7; 声明一个整数变量并给它初值。之后 length = 9; 会改变它的值。变量名区分大小写，不可以使用未初始化变量里的不确定数据。"
+        },
+        {
+          "title": "类型与输出格式相配",
+          "body": "int 适合本课的小整数；double 用于小数。printf 中的 %d 是整数占位符，后面的变量值会填在它的位置。这里先只练整数，后续再理解小数精度和不同类型的范围。",
+          "code": "int length = 7;\nint width = 4;\nint area = length * width;\nprintf(\"%d\\n\", area);"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p4"
+      ],
+      "exerciseIds": [
+        "c-03-quiz",
+        "c-03-code"
+      ],
+      "takeaway": "先给变量一个确定的值，再用与类型匹配的格式输出它。"
+    },
+    {
+      "id": "c-04",
+      "moduleId": "c-foundations",
+      "order": 4,
+      "title": "整数运算与余数",
+      "subtitle": "理解为什么 5 / 2 不是 2.5。",
+      "minutes": 45,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "区分整数除法和余数",
+        "正确理解运算顺序"
+      ],
+      "sections": [
+        {
+          "title": "整数除法会截去小数部分",
+          "body": "两个整数相除仍得到整数。5 / 2 得到2，5 % 2 得到余数1。对本课的非负整数，可以用“完整分了几组、剩下几个”理解。除数不能为0。"
+        },
+        {
+          "title": "括号表达意图",
+          "body": "乘除和取余先于加减。写上必要括号能减少误解。要得到小数，可以让一个操作数成为小数，例如5.0/2，而不是算完整数除法后才转成小数。",
+          "code": "int minutes = 125;\nprintf(\"%d %d\\n\", minutes / 60, minutes % 60);"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p9"
+      ],
+      "exerciseIds": [
+        "c-04-quiz",
+        "c-04-code"
+      ],
+      "takeaway": "需要商用 /，需要余数用 %；整数除法不会自动保留小数。"
+    },
+    {
+      "id": "c-05",
+      "moduleId": "c-foundations",
+      "order": 5,
+      "title": "让程序接收输入",
+      "subtitle": "程序开始根据不同数据做事。",
+      "minutes": 45,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "读取两个整数",
+        "检查读取是否成功"
+      ],
+      "sections": [
+        {
+          "title": "scanf 从输入中取数据",
+          "body": "scanf(\"%d\", &a) 读取一个整数并放入a。这里的 &a 表示a的地址，先记住“给输入函数一个存放位置”，指针课会解释地址。scanf的返回值是成功赋值的项目数。"
+        },
+        {
+          "title": "为测试写清晰的输入输出",
+          "body": "读取两个整数时检查返回值是否为2，失败就返回非零值。评测会提供输入，所以不要打印“请输入”。这一课保证输入是合法整数，不需要先做复杂格式校验。",
+          "code": "int a, b;\nif (scanf(\"%d %d\", &a, &b) != 2) return 1;\nprintf(\"%d\\n\", a + b);"
+        }
+      ],
+      "resourceIds": [
+        "fish-c"
+      ],
+      "exerciseIds": [
+        "c-05-quiz",
+        "c-05-code"
+      ],
+      "takeaway": "输入函数需要存放位置；检查返回值可以避免使用未读入的变量。"
+    },
+    {
+      "id": "c-06",
+      "moduleId": "c-foundations",
+      "order": 6,
+      "title": "让程序做判断",
+      "subtitle": "从条件表达式走到 if / else。",
+      "minutes": 45,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "用>=表达阈值",
+        "覆盖临界值测试"
+      ],
+      "sections": [
+        {
+          "title": "条件决定走哪条路",
+          "body": "if 后面的条件成立时执行第一组语句，否则执行else。>=表示大于或等于，==表示判断是否相等，单个=则是赋值。不要把两者混淆。"
+        },
+        {
+          "title": "边界最值得测试",
+          "body": "如果60分及格，就测试59、60和61。仅测试一个90分，发现不了你误写成>60的问题。花括号能清晰界定分支范围。",
+          "code": "if (score >= 60) {\n    printf(\"PASS\\n\");\n} else {\n    printf(\"FAIL\\n\");\n}"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p10",
+        "fish-c-p11"
+      ],
+      "exerciseIds": [
+        "c-06-quiz",
+        "c-06-code"
+      ],
+      "takeaway": "把临界值和它两边的值一起测试。"
+    },
+    {
+      "id": "c-07",
+      "moduleId": "c-foundations",
+      "order": 7,
+      "title": "多种情况，逐一处理",
+      "subtitle": "用 else if 组织互斥条件。",
+      "minutes": 45,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "区分正数、零、负数",
+        "理解分支只执行一条"
+      ],
+      "sections": [
+        {
+          "title": "先判断，再排除",
+          "body": "if / else if / else会从上到下判断，找到第一个成立条件后执行其语句，后面的分支就不再执行。与几个独立if不同，它表达的是互斥选择。"
+        },
+        {
+          "title": "别漏掉零",
+          "body": "正数满足n>0，负数满足n<0；剩下的是零。先在纸上画三条路，再写代码，有助于发现漏掉的情况。",
+          "code": "if (n > 0) {\n    printf(\"positive\\n\");\n} else if (n < 0) {\n    printf(\"negative\\n\");\n} else {\n    printf(\"zero\\n\");\n}"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p11"
+      ],
+      "exerciseIds": [
+        "c-07-quiz",
+        "c-07-code"
+      ],
+      "takeaway": "把所有合法输入分成互斥且完整的几类。"
+    },
+    {
+      "id": "c-08",
+      "moduleId": "c-foundations",
+      "order": 8,
+      "title": "重复的事交给 for",
+      "subtitle": "用循环完成累加任务。",
+      "minutes": 45,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "理解循环初始化、条件与更新",
+        "处理零次循环"
+      ],
+      "sections": [
+        {
+          "title": "for 的三个位置",
+          "body": "for (int i=1; i<=n; ++i)先把i设为1，每轮前判断i<=n，执行循环体后让i加1。条件不成立就结束。不要忘记更新变量，否则循环可能无法结束。"
+        },
+        {
+          "title": "累加器从0开始",
+          "body": "sum记录目前的和，进入循环前必须初始化为0。每轮执行sum += i。n=0时第一次条件就不成立，循环体执行0次，结果仍为0。",
+          "code": "int sum = 0;\nfor (int i = 1; i <= n; ++i) {\n    sum += i;\n}"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p14"
+      ],
+      "exerciseIds": [
+        "c-08-quiz",
+        "c-08-code"
+      ],
+      "takeaway": "检查起点、终点和每轮变化，特别关注一次也不循环的情况。"
+    },
+    {
+      "id": "c-09",
+      "moduleId": "c-foundations",
+      "order": 9,
+      "title": "用 while 逐步解决问题",
+      "subtitle": "当次数未知时，盯住退出条件。",
+      "minutes": 45,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "理解while与do while",
+        "通过除10统计位数"
+      ],
+      "sections": [
+        {
+          "title": "while 先判断条件",
+          "body": "while (n>0)会在每轮执行前检查n。每次n/=10会去掉非负整数的最后一位。最终变成0，循环结束。循环体必须推动程序接近退出条件。"
+        },
+        {
+          "title": "0也有一位",
+          "body": "如果一开始n就是0，while的循环体一次也不会执行。可以单独处理0，或用先执行再判断的do while，保证统计至少一次。",
+          "code": "int digits = 0;\ndo {\n    ++digits;\n    n /= 10;\n} while (n > 0);"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p13"
+      ],
+      "exerciseIds": [
+        "c-09-quiz",
+        "c-09-code"
+      ],
+      "takeaway": "除了常见情况，也要考虑循环开始前条件就不成立的输入。"
+    },
+    {
+      "id": "c-10",
+      "moduleId": "c-foundations",
+      "order": 10,
+      "title": "把一件事写成函数",
+      "subtitle": "给重复逻辑一个明确的输入和结果。",
+      "minutes": 45,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "定义并调用有返回值的函数",
+        "理解参数是传入值的副本"
+      ],
+      "sections": [
+        {
+          "title": "函数是可以调用的步骤",
+          "body": "int square(int x)描述一个接收整数、返回整数的函数。return x*x把计算结果交给调用者。把函数定义放在main前面，就能让编译器先看到它。"
+        },
+        {
+          "title": "参数和局部变量",
+          "body": "调用square(n)时，n的值传给参数x。x是函数内的局部变量，直接修改x不会改变main里的n。后面学习指针时再讨论如何通过地址修改调用者数据。",
+          "code": "int square(int x) {\n    return x * x;\n}\n/* 在main中： */\nprintf(\"%d\\n\", square(5));"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p28"
+      ],
+      "exerciseIds": [
+        "c-10-quiz",
+        "c-10-code"
+      ],
+      "takeaway": "函数有明确的输入、处理和输出；局部变量只在相应范围使用。"
+    },
+    {
+      "id": "c-11",
+      "moduleId": "c-foundations",
+      "order": 11,
+      "title": "数组：保存一组数据",
+      "subtitle": "从单个变量走向有顺序的数据。",
+      "minutes": 45,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "从0开始访问数组",
+        "遍历数组并寻找最大值"
+      ],
+      "sections": [
+        {
+          "title": "长度与下标",
+          "body": "int a[5]创建5个整数位置，下标是0到4。a[5]已经越界，编译器不一定能及时发现。循环访问时用i<5，不要写i<=5。"
+        },
+        {
+          "title": "最大值从真实数据开始",
+          "body": "如果把max初始化为0，遇到全部负数就会错误。应先读入数组，把a[0]当作当前最大值，再从下标1开始比较。",
+          "code": "int values[5];\nfor (int i = 0; i < 5; ++i) {\n    if (scanf(\"%d\", &values[i]) != 1) return 1;\n}\nint maximum = values[0];"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p17"
+      ],
+      "exerciseIds": [
+        "c-11-quiz",
+        "c-11-code"
+      ],
+      "takeaway": "数组下标从0开始；算法的初始值也需要覆盖负数等边界。"
+    },
+    {
+      "id": "c-12",
+      "moduleId": "c-foundations",
+      "order": 12,
+      "title": "字符串与结束标记",
+      "subtitle": "理解字符数组为什么要多留一个位置。",
+      "minutes": 45,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "识别字符串末尾的\\0",
+        "限制字符串读取长度"
+      ],
+      "sections": [
+        {
+          "title": "字符串住在字符数组里",
+          "body": "char word[101]能保存最多100个普通字符和末尾的空字符\\0。空字符用于标记字符串结束，它不是字母0，也不会作为可见字符输出。"
+        },
+        {
+          "title": "限制输入，逐个计数",
+          "body": "scanf(\"%100s\", word)最多读入100个非空白字符，并补上结束标记。本课输入只含英文字母，不含空格；这里word已经提供数组起始位置，不再写&word。按下标检查word[i]，直到遇到\\0。",
+          "code": "char word[101];\nif (scanf(\"%100s\", word) != 1) return 1;\nint length = 0;\nwhile (word[length] != '\\0') ++length;"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p8"
+      ],
+      "exerciseIds": [
+        "c-12-quiz",
+        "c-12-code"
+      ],
+      "takeaway": "字符串长度不包括末尾的空字符，但数组容量必须给它留位置。"
+    },
+    {
+      "id": "c-13",
+      "moduleId": "c-foundations",
+      "order": 13,
+      "title": "指针：找到数据所在的位置",
+      "subtitle": "通过地址理解输入函数与数据修改。",
+      "minutes": 55,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "区分地址与地址中的值",
+        "通过指针交换两个整数"
+      ],
+      "sections": [
+        {
+          "title": "地址和值是两件事",
+          "body": "int *p = &a;让p保存变量a的地址。&a取得地址，*p取得或修改该地址对应的整数。指针必须指向有效、仍存在的对象，不能把随意的数字当作可访问地址。"
+        },
+        {
+          "title": "把修改带回调用者",
+          "body": "普通参数是副本。要让函数修改main中的a与b，可以把&a和&b传入，用*x与*y访问它们。交换时先用临时变量保存一个原值，避免被覆盖。",
+          "code": "void swap(int *x, int *y) {\n    int temporary = *x;\n    *x = *y;\n    *y = temporary;\n}"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p21",
+        "pointer"
+      ],
+      "exerciseIds": [
+        "c-13-quiz",
+        "c-13-code"
+      ],
+      "takeaway": "指针保存地址；解引用操作访问地址处的数据，前提是地址有效。"
+    },
+    {
+      "id": "c-14",
+      "moduleId": "c-foundations",
+      "order": 14,
+      "title": "位操作：走向嵌入式 C",
+      "subtitle": "用掩码只改变你想改变的那一位。",
+      "minutes": 55,
+      "level": "零基础",
+      "available": true,
+      "objectives": [
+        "理解左移与按位或",
+        "识别普通变量模拟和硬件操作的边界"
+      ],
+      "sections": [
+        {
+          "title": "一位一个开关",
+          "body": "二进制的每一位只有0或1。1u<<3得到第3位为1的掩码（最低位是第0位）。value | mask会把掩码为1的位置设为1，同时保留其他位。按位或是单个|，逻辑或是||。"
+        },
+        {
+          "title": "设置、清除与翻转",
+          "body": "value |= mask设置位；value &= ~mask清除位；value ^= mask翻转位。使用无符号数并确保移位量小于类型位宽。本题只处理0到7位。",
+          "code": "unsigned int flags = 0;\nflags |= (1u << 3);   /* 设为1，得到8 */\nflags &= ~(1u << 3);  /* 清为0 */"
+        },
+        {
+          "title": "接下来会遇到的类型与关键字",
+          "body": "stdint.h提供uint32_t等明确位宽的类型。const表示不能经这个声明去修改对象；volatile提示编译器每次都要按语言规则进行相应访问，但不保证原子性或线程同步。本课仅在普通变量上练位运算，没有访问STM32硬件寄存器。"
+        }
+      ],
+      "resourceIds": [
+        "fish-c-p54",
+        "fish-c-p55"
+      ],
+      "exerciseIds": [
+        "c-14-quiz",
+        "c-14-code"
+      ],
+      "takeaway": "先理解位掩码，再读HAL和寄存器代码；普通变量的练习结果不是硬件验证。"
+    },
+    {
+      "id": "stm32-01",
+      "moduleId": "stm32-path",
+      "order": 1,
+      "title": "认识你的第一颗 MCU",
+      "subtitle": "从电脑程序走向微控制器。",
+      "minutes": 40,
+      "level": "进阶预备",
+      "available": true,
+      "objectives": [
+        "区分PC程序与STM32固件",
+        "认识芯片、开发板和调试器"
+      ],
+      "sections": [
+        {
+          "title": "一颗小型计算机",
+          "body": "STM32是基于Arm内核的微控制器系列。芯片把处理器、存储器和GPIO、串口、定时器等外设集成在一起。开发板为芯片提供电源、接口等；调试器用于下载和观察程序执行。"
+        },
+        {
+          "title": "你现在的学习条件",
+          "body": "当前没有开发板，所以先读懂原理、工程和代码。你的电脑学习目录中已有NUCLEO-F446RE的HAL工程配置，手机不包含这套编译工具。ARM编译器生成的固件不能当作Windows程序直接运行；编译通过仅说明构建环节成功。"
+        },
+        {
+          "title": "选择一条一致路线",
+          "body": "Keysking课程采用F103板和HAL/CubeIDE，是本路线的视频参考。现有工程是F446 HAL，迁移时需要核对芯片、引脚、时钟、启动文件与HAL包。江协SPL课可以补原理，但不要混用库API。"
+        }
+      ],
+      "resourceIds": [
+        "keysking",
+        "jiang-stm32"
+      ],
+      "exerciseIds": [
+        "stm32-01-quiz"
+      ],
+      "takeaway": "芯片、开发板、编译工具和调试器各司其职；编译不等于板上运行。"
+    },
+    {
+      "id": "stm32-02",
+      "moduleId": "stm32-path",
+      "order": 2,
+      "title": "看懂 HAL 工程的启动顺序",
+      "subtitle": "先初始化，再使用外设。",
+      "minutes": 45,
+      "level": "进阶预备",
+      "available": true,
+      "objectives": [
+        "理解初始化与主循环",
+        "分清HAL、SPL与寄存器编程"
+      ],
+      "sections": [
+        {
+          "title": "从上电到 main",
+          "body": "芯片复位后先执行启动代码，完成必要的运行环境准备，再进入main。典型HAL工程在main中调用HAL_Init、系统时钟配置和外设初始化，之后进入while(1)主循环。实际顺序以具体生成工程为准。"
+        },
+        {
+          "title": "HAL 是接口，不是魔法",
+          "body": "HAL库把常见外设操作封装成函数，底层仍会访问寄存器。SPL也做封装；寄存器直写才是直接读写相关地址和位字段。LL是另一套低层库，不是SPL的别名。"
+        },
+        {
+          "title": "认识 Cube 工具的分工",
+          "body": "CubeMX配置芯片和外设并生成初始化代码；CubeIDE用于编辑、构建和调试。ST说明CubeIDE从2.0起与CubeMX分开安装；旧视频的内嵌流程不能直接当成新版本界面。它们是电脑开发工具，本阶段先在手机理解工程。",
+          "code": "/* HAL工程流程示意，不能直接在手机C解释器或电脑基础C练习框运行 */\nHAL_Init();\nSystemClock_Config();\nMX_GPIO_Init();\nwhile (1) {\n    /* 应用逻辑 */\n}"
+        }
+      ],
+      "resourceIds": [
+        "atom-hal-framework",
+        "atom-startup"
+      ],
+      "exerciseIds": [
+        "stm32-02-quiz"
+      ],
+      "takeaway": "先确认工程型号和初始化流程，再调用外设函数。"
+    },
+    {
+      "id": "stm32-03",
+      "moduleId": "stm32-path",
+      "order": 3,
+      "title": "GPIO：从逻辑电平到一盏灯",
+      "subtitle": "建立引脚、模式和时钟的联系。",
+      "minutes": 45,
+      "level": "进阶预备",
+      "available": true,
+      "objectives": [
+        "理解输入与输出模式",
+        "识别板级引脚和有效电平"
+      ],
+      "sections": [
+        {
+          "title": "引脚需要先配置",
+          "body": "GPIO引脚可以作为输入或输出，也可能复用为串口等外设信号。使用前需要打开对应端口时钟并设置模式。上拉/下拉用于给未被外部强制驱动的输入提供默认状态；并非所有场合都适用。"
+        },
+        {
+          "title": "逻辑1不一定意味着灯亮",
+          "body": "LED可能接成高电平点亮，也可能低电平点亮。必须看具体开发板原理图。电脑中已有的F446工程使用PA5，而Keysking教程板的引脚布局不同。移植时不能只复制函数。"
+        },
+        {
+          "title": "推挽与开漏的第一印象",
+          "body": "推挽可以主动驱动高低电平；开漏输出只能主动拉低，高电平通常依靠合适的上拉。学习阶段先辨认模式与有效电平；实际接线需先核对电压、公共地和限流。",
+          "code": "/* 前提：GPIOA时钟和PA5输出模式已初始化 */\nHAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);\nHAL_Delay(500);"
+        }
+      ],
+      "resourceIds": [
+        "key-gpio",
+        "key-led"
+      ],
+      "exerciseIds": [
+        "stm32-03-quiz"
+      ],
+      "takeaway": "代码中的引脚名、配置模式和板子实际电路必须对应。"
+    },
+    {
+      "id": "stm32-04",
+      "moduleId": "stm32-path",
+      "order": 4,
+      "title": "UART：让设备交换字节",
+      "subtitle": "先看通信约定，再看发送函数。",
+      "minutes": 45,
+      "level": "进阶预备",
+      "available": true,
+      "objectives": [
+        "理解波特率和帧格式",
+        "区分阻塞、中断与DMA"
+      ],
+      "sections": [
+        {
+          "title": "两端必须说同一种节奏",
+          "body": "UART用TX发送、RX接收；常见连接是发送端TX连到对方RX，接收端RX连到对方TX，并共地。两端波特率、数据位、校验位和停止位等设置需一致。先核对逻辑电平，RS-232电压不能直接接到MCU引脚。"
+        },
+        {
+          "title": "8N1 是什么意思",
+          "body": "8N1表示8数据位、无校验、1停止位。加上1起始位，每个字节通常占10个位时间。因此9600 baud下连续传输的理想上限约为960字节/秒，协议和软件开销会进一步降低有效速度。"
+        },
+        {
+          "title": "先从阻塞理解流程",
+          "body": "阻塞发送会等待发送完成或超时；中断让CPU在事件到来时处理；DMA可把数据搬运工作交给控制器。这些是不同机制，不意味着“用了DMA就永远不会丢数据”。无板阶段先推演数据流。"
+        }
+      ],
+      "resourceIds": [
+        "key-uart-polling",
+        "key-uart-interrupt",
+        "atom-usart"
+      ],
+      "exerciseIds": [
+        "stm32-04-quiz"
+      ],
+      "takeaway": "先核对电平与通信参数，再排查软件；串口是一串字节，不自动知道完整消息边界。"
+    },
+    {
+      "id": "stm32-05",
+      "moduleId": "stm32-path",
+      "order": 5,
+      "title": "定时器与 PWM",
+      "subtitle": "用频率和占空比描述重复信号。",
+      "minutes": 50,
+      "level": "进阶预备",
+      "available": true,
+      "objectives": [
+        "计算基本计数频率",
+        "区分PWM频率与占空比"
+      ],
+      "sections": [
+        {
+          "title": "先明确输入给定时器的时钟",
+          "body": "在常见向上计数配置中，更新频率f = f_TIM / (PSC+1) / (ARR+1)。PSC与ARR的寄存器值都要加1。f_TIM是定时器输入时钟，不能直接假定等于CPU频率；具体需要看时钟树和APB规则。"
+        },
+        {
+          "title": "一个周期里高电平占多少",
+          "body": "对常见PWM模式1、向上计数且输出高有效的情况，占空比可近似看作CCR/(ARR+1)。改变CCR主要改变高电平比例，改变PSC或ARR会影响周期。极性、计数模式等设置会改变解释。"
+        },
+        {
+          "title": "纸上就可以做的验证",
+          "body": "假设f_TIM明确为16 MHz，PSC=15，ARR=999，则频率=16,000,000/16/1000=1000 Hz。此时CCR=250对应约25%占空比。这是计算练习，实际信号需要示波器或其他合适方式测量。"
+        }
+      ],
+      "resourceIds": [
+        "key-timer",
+        "key-pwm"
+      ],
+      "exerciseIds": [
+        "stm32-05-quiz"
+      ],
+      "takeaway": "先明确时钟源，再算PSC、ARR和CCR；频率与占空比是两个不同的量。"
+    },
+    {
+      "id": "stm32-06",
+      "moduleId": "stm32-path",
+      "order": 6,
+      "title": "ADC：把电压变成数字",
+      "subtitle": "建立分辨率、参考电压和采样的联系。",
+      "minutes": 45,
+      "level": "进阶预备",
+      "available": true,
+      "objectives": [
+        "计算12位ADC数字范围",
+        "用参考电压估算输入电压"
+      ],
+      "sections": [
+        {
+          "title": "12位不等于12伏",
+          "body": "12位ADC有2^12=4096个数字码，码值范围0到4095。位数描述量化分辨率，允许的输入电压范围要看芯片与参考电压，不能从位数推出。"
+        },
+        {
+          "title": "从码值估算电压",
+          "body": "入门端点近似可用V_in≈raw×V_ref/4095。假设V_ref=3.3V，raw=2048，估算约1.65V。真实结果受参考电压误差、采样时间、信号源阻抗和噪声影响，这个公式不是校准证明。"
+        },
+        {
+          "title": "先让假设可见",
+          "body": "在学习笔记中记录分辨率、参考电压假设和码值，再计算。没有开发板时能做换算与边界题；真实电压测量、通道配置和噪声检查需要实板完成。"
+        }
+      ],
+      "resourceIds": [
+        "key-adc",
+        "atom-adc"
+      ],
+      "exerciseIds": [
+        "stm32-06-quiz"
+      ],
+      "takeaway": "ADC码值的含义依赖分辨率与参考电压；计算正确不等于实测准确。"
+    },
+    {
+      "id": "cpp-01",
+      "moduleId": "cpp-path",
+      "order": 1,
+      "title": "C++，在需要时再出发",
+      "subtitle": "把已有C知识变成下一步的基础。",
+      "minutes": 35,
+      "level": "进阶预备",
+      "available": true,
+      "objectives": [
+        "知道C++并非STM32入门前提",
+        "初步区分类和引用"
+      ],
+      "sections": [
+        {
+          "title": "先把一条主线学踏实",
+          "body": "C++支持与C不同的一组语言能力，包括引用、类、构造与析构、模板和标准库。两者有许多共同语法，但并非所有C程序都是合法C++程序。现在先理解概念，不必同时学习两套工程。"
+        },
+        {
+          "title": "引用是一个已有对象的别名",
+          "body": "int &alias = value;让alias成为value的另一个名字。引用定义时要绑定对象，之后通过它赋值会影响该对象。不要把这里的&声明语法与C取地址表达式完全等同。",
+          "code": "// C++ 示例：在电脑使用 g++，手机 C 解释器不执行 C++\nint value = 3;\nint &alias = value;\nalias = 7; // value 也变为7"
+        },
+        {
+          "title": "类与资源管理是后续重点",
+          "body": "类可以把数据和相关操作组织在一起。构造、析构和RAII帮助管理资源。桌面STL、动态分配和异常等在嵌入式上需要结合内存、运行库与实时性约束评估，不是学会桌面代码就能照搬。"
+        }
+      ],
+      "resourceIds": [
+        "cpp-reference",
+        "cpp-class"
+      ],
+      "exerciseIds": [
+        "cpp-01-quiz"
+      ],
+      "takeaway": "C++是后续工具；先完成C和STM32的软件基础，再按项目需要学习。"
+    },
+    {
+      "id": "stm32-hardware",
+      "moduleId": "stm32-path",
+      "order": 7,
+      "title": "连接真实的开发板",
+      "subtitle": "购板后按实际型号接入烧录、调试与实验。",
+      "minutes": 60,
+      "level": "进阶预备",
+      "available": false,
+      "objectives": [],
+      "sections": [
+        {
+          "title": "下一阶段",
+          "body": "等确定开发板型号后，核对电源与调试接口，完成烧录、LED、按键和串口实验。当前未开放硬件验收，不计入可学课程进度。"
+        }
+      ],
+      "resourceIds": [
+        "keysking"
+      ],
+      "exerciseIds": [],
+      "takeaway": "硬件功能必须通过实板验证。"
+    },
+    {
+      "id": "cpp-project",
+      "moduleId": "cpp-path",
+      "order": 2,
+      "title": "C++ 项目与更进阶的嵌入式",
+      "subtitle": "完成主线后，再拓展项目组织与实时系统。",
+      "minutes": 60,
+      "level": "进阶预备",
+      "available": false,
+      "objectives": [],
+      "sections": [
+        {
+          "title": "后续扩展",
+          "body": "后续可加入C++编译练习、类与RAII小项目，再按需要学习RTOS和复杂通信。本版不把这些尚未实现的实验算作已开放课程。"
+        }
+      ],
+      "resourceIds": [
+        "cpp"
+      ],
+      "exerciseIds": [],
+      "takeaway": "按实际项目需要扩展工具，而不是同时打开所有学习路线。"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "c-01-quiz",
+      "lessonId": "c-01",
+      "type": "quiz",
+      "title": "理解编译",
+      "prompt": "把 C 源代码变成可执行程序，主要由谁完成？",
+      "choices": [
+        "浏览器的地址栏",
+        "C 编译与链接工具",
+        "printf 函数",
+        "键盘"
+      ],
+      "answer": 1,
+      "explanation": "编译与链接工具把源代码转换成可执行程序；printf 是程序运行时调用的输出函数。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "编译与链接工具把源代码转换成可执行程序；printf 是程序运行时调用的输出函数。"
+      ]
+    },
+    {
+      "id": "c-01-code",
+      "lessonId": "c-01",
+      "type": "code",
+      "title": "第一句问候",
+      "prompt": "无需输入。输出一行 Hello, STM32!（注意大小写和标点）。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    printf(\"Hello, STM32!\\n\");\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "",
+          "expected": "Hello, STM32!\n"
+        }
+      ],
+      "hints": [
+        "使用 printf 输出文字。",
+        "文字要放在一对英文双引号中。",
+        "把 Hello, STM32! 放进 printf，并在末尾添加换行符。"
+      ],
+      "explanation": "电脑通常先编译再运行；手机学习解释器直接执行支持的 C 子集，两者都要检查实际输出。"
+    },
+    {
+      "id": "c-02-quiz",
+      "lessonId": "c-02",
+      "type": "quiz",
+      "title": "换行的含义",
+      "prompt": "printf(\"A\\nB\\n\"); 的结果是什么？",
+      "choices": [
+        "只输出 A",
+        "同一行输出 A B",
+        "分两行输出 A 和 B",
+        "一定编译失败"
+      ],
+      "answer": 2,
+      "explanation": "\\n 是换行符，所以 A 和 B 出现在不同的行。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "\\n 是换行符，所以 A 和 B 出现在不同的行。"
+      ]
+    },
+    {
+      "id": "c-02-code",
+      "lessonId": "c-02",
+      "type": "code",
+      "title": "两行学习宣言",
+      "prompt": "无需输入。第一行输出 Learning C，第二行输出 Step by step。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    printf(\"Learning C\\nStep by step\\n\");\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "",
+          "expected": "Learning C\nStep by step\n"
+        }
+      ],
+      "hints": [
+        "可以调用两次 printf。",
+        "也可以在一个字符串中使用两个换行符。",
+        "注意第二行是 Step by step，单词之间各有一个空格。"
+      ],
+      "explanation": "先读第一条错误，逐个修复；\\n 控制换行。"
+    },
+    {
+      "id": "c-03-quiz",
+      "lessonId": "c-03",
+      "type": "quiz",
+      "title": "赋值后会怎样",
+      "prompt": "int x = 3; x = 8; 执行后 x 的值是？",
+      "choices": [
+        "3",
+        "8",
+        "11",
+        "不确定"
+      ],
+      "answer": 1,
+      "explanation": "第二条赋值覆盖了原值，x 现在保存8。等号是赋值操作，不是在解方程。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "第二条赋值覆盖了原值，x 现在保存8。等号是赋值操作，不是在解方程。"
+      ]
+    },
+    {
+      "id": "c-03-code",
+      "lessonId": "c-03",
+      "type": "code",
+      "title": "计算矩形面积",
+      "prompt": "无需输入。声明长度为7、宽度为4的整数变量，输出它们相乘得到的面积。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    int length = 7;\n    int width = 4;\n    printf(\"%d\\n\", length * width);\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "",
+          "expected": "28\n"
+        }
+      ],
+      "hints": [
+        "面积等于长度乘宽度。",
+        "C里的乘法符号是 *。",
+        "用 %d 输出 length * width 的计算结果。"
+      ],
+      "explanation": "先给变量一个确定的值，再用与类型匹配的格式输出它。"
+    },
+    {
+      "id": "c-04-quiz",
+      "lessonId": "c-04",
+      "type": "quiz",
+      "title": "预测输出",
+      "prompt": "整数表达式 17 / 5 和 17 % 5 分别是多少？",
+      "choices": [
+        "3 和 2",
+        "3.4 和 0",
+        "2 和 3",
+        "5 和 2"
+      ],
+      "answer": 0,
+      "explanation": "17包含3个完整的5，还剩2。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "17包含3个完整的5，还剩2。"
+      ]
+    },
+    {
+      "id": "c-04-code",
+      "lessonId": "c-04",
+      "type": "code",
+      "title": "分钟换算",
+      "prompt": "无需输入。将125分钟换算为小时和剩余分钟，输出两个整数，以一个空格隔开。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    int minutes = 125;\n    printf(\"%d %d\\n\", minutes / 60, minutes % 60);\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "",
+          "expected": "2 5\n"
+        }
+      ],
+      "hints": [
+        "一小时有60分钟。",
+        "小时数用除法，剩余分钟用取余。",
+        "输出 minutes / 60 和 minutes % 60。"
+      ],
+      "explanation": "需要商用 /，需要余数用 %；整数除法不会自动保留小数。"
+    },
+    {
+      "id": "c-05-quiz",
+      "lessonId": "c-05",
+      "type": "quiz",
+      "title": "地址与输入",
+      "prompt": "读取 int a 时，本课使用的写法是？",
+      "choices": [
+        "scanf(\"%d\", a);",
+        "scanf(\"%d\", &a);",
+        "printf(\"%d\", &a);",
+        "input(a);"
+      ],
+      "answer": 1,
+      "explanation": "scanf需要写入变量的地址，所以使用&a。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "scanf需要写入变量的地址，所以使用&a。"
+      ]
+    },
+    {
+      "id": "c-05-code",
+      "lessonId": "c-05",
+      "type": "code",
+      "title": "两个整数求和",
+      "prompt": "输入两个整数 a 和 b（均在-1000到1000之间），输出它们的和。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    int a, b;\n    if (scanf(\"%d %d\", &a, &b) != 2) return 1;\n    printf(\"%d\\n\", a + b);\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "2 3\n",
+          "expected": "5\n"
+        },
+        {
+          "input": "-7 2\n",
+          "expected": "-5\n"
+        },
+        {
+          "input": "0 0\n",
+          "expected": "0\n"
+        },
+        {
+          "input": "1000 -1000\n",
+          "expected": "0\n"
+        }
+      ],
+      "hints": [
+        "先声明两个int变量。",
+        "一次scanf可读取两个%d，并检查返回值2。",
+        "把a+b作为printf的整数输出参数。"
+      ],
+      "explanation": "输入函数需要存放位置；检查返回值可以避免使用未读入的变量。"
+    },
+    {
+      "id": "c-06-quiz",
+      "lessonId": "c-06",
+      "type": "quiz",
+      "title": "包含边界",
+      "prompt": "让60分也进入及格分支，应写？",
+      "choices": [
+        "score > 60",
+        "score = 60",
+        "score >= 60",
+        "score < 60"
+      ],
+      "answer": 2,
+      "explanation": ">=同时包括“大于”和“等于”，因此60分也成立。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        ">=同时包括“大于”和“等于”，因此60分也成立。"
+      ]
+    },
+    {
+      "id": "c-06-code",
+      "lessonId": "c-06",
+      "type": "code",
+      "title": "及格判断",
+      "prompt": "输入0到100之间的整数分数，60及以上输出PASS，否则输出FAIL。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    int score;\n    if (scanf(\"%d\", &score) != 1) return 1;\n    if (score >= 60) printf(\"PASS\\n\");\n    else printf(\"FAIL\\n\");\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "59\n",
+          "expected": "FAIL\n"
+        },
+        {
+          "input": "60\n",
+          "expected": "PASS\n"
+        },
+        {
+          "input": "61\n",
+          "expected": "PASS\n"
+        },
+        {
+          "input": "0\n",
+          "expected": "FAIL\n"
+        },
+        {
+          "input": "100\n",
+          "expected": "PASS\n"
+        }
+      ],
+      "hints": [
+        "用if/else分两种结果。",
+        "60属于及格范围。",
+        "比较条件写score >= 60。"
+      ],
+      "explanation": "把临界值和它两边的值一起测试。"
+    },
+    {
+      "id": "c-07-quiz",
+      "lessonId": "c-07",
+      "type": "quiz",
+      "title": "条件的顺序",
+      "prompt": "一组if / else if / else中第一个条件成立后，会怎样？",
+      "choices": [
+        "继续执行所有后续分支",
+        "只执行对应分支，跳过本组后续分支",
+        "跳过整个程序",
+        "自动重复判断"
+      ],
+      "answer": 1,
+      "explanation": "同一组条件分支只执行首个匹配分支。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "同一组条件分支只执行首个匹配分支。"
+      ]
+    },
+    {
+      "id": "c-07-code",
+      "lessonId": "c-07",
+      "type": "code",
+      "title": "判断正负",
+      "prompt": "输入-1000到1000之间的整数，正数输出positive，负数输出negative，零输出zero。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    if (n > 0) printf(\"positive\\n\");\n    else if (n < 0) printf(\"negative\\n\");\n    else printf(\"zero\\n\");\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "7\n",
+          "expected": "positive\n"
+        },
+        {
+          "input": "-2\n",
+          "expected": "negative\n"
+        },
+        {
+          "input": "0\n",
+          "expected": "zero\n"
+        }
+      ],
+      "hints": [
+        "将情况分成大于0、小于0、等于0。",
+        "else能接住前两个条件都不成立的情况。",
+        "输出单词都使用小写，不添加其他文字。"
+      ],
+      "explanation": "把所有合法输入分成互斥且完整的几类。"
+    },
+    {
+      "id": "c-08-quiz",
+      "lessonId": "c-08",
+      "type": "quiz",
+      "title": "循环边界",
+      "prompt": "求1到n（含n）的和，从i=1开始时应采用哪个条件？",
+      "choices": [
+        "i < n",
+        "i <= n",
+        "i == n",
+        "i > n"
+      ],
+      "answer": 1,
+      "explanation": "i<=n才能包含最后的n；i<n会漏算n。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "i<=n才能包含最后的n；i<n会漏算n。"
+      ]
+    },
+    {
+      "id": "c-08-code",
+      "lessonId": "c-08",
+      "type": "code",
+      "title": "从1累加到n",
+      "prompt": "输入整数n（0到1000），用循环计算1到n的和；n=0时输出0。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    int n, sum = 0;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    for (int i = 1; i <= n; ++i) sum += i;\n    printf(\"%d\\n\", sum);\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "0\n",
+          "expected": "0\n"
+        },
+        {
+          "input": "1\n",
+          "expected": "1\n"
+        },
+        {
+          "input": "10\n",
+          "expected": "55\n"
+        },
+        {
+          "input": "1000\n",
+          "expected": "500500\n"
+        }
+      ],
+      "hints": [
+        "先把sum初始化为0。",
+        "循环从1开始，直到包含n。",
+        "每轮把i加进sum，循环外统一输出。"
+      ],
+      "explanation": "检查起点、终点和每轮变化，特别关注一次也不循环的情况。"
+    },
+    {
+      "id": "c-09-quiz",
+      "lessonId": "c-09",
+      "type": "quiz",
+      "title": "至少执行一次",
+      "prompt": "哪个结构能保证循环体至少执行一次？",
+      "choices": [
+        "while",
+        "for",
+        "do while",
+        "if"
+      ],
+      "answer": 2,
+      "explanation": "do while先执行循环体，再检查条件，因此至少执行一次。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "do while先执行循环体，再检查条件，因此至少执行一次。"
+      ]
+    },
+    {
+      "id": "c-09-code",
+      "lessonId": "c-09",
+      "type": "code",
+      "title": "数一数有几位",
+      "prompt": "输入非负整数n（0到999999），输出十进制位数。规定0是一位。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    int n, digits = 0;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    do { ++digits; n /= 10; } while (n > 0);\n    printf(\"%d\\n\", digits);\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "0\n",
+          "expected": "1\n"
+        },
+        {
+          "input": "9\n",
+          "expected": "1\n"
+        },
+        {
+          "input": "10\n",
+          "expected": "2\n"
+        },
+        {
+          "input": "1000\n",
+          "expected": "4\n"
+        },
+        {
+          "input": "999999\n",
+          "expected": "6\n"
+        }
+      ],
+      "hints": [
+        "每除以10一次，去掉一个十进制位。",
+        "需要让0也统计一次。",
+        "使用do while，或对0单独设置digits=1。"
+      ],
+      "explanation": "除了常见情况，也要考虑循环开始前条件就不成立的输入。"
+    },
+    {
+      "id": "c-10-quiz",
+      "lessonId": "c-10",
+      "type": "quiz",
+      "title": "函数的返回值",
+      "prompt": "int twice(int x){ return x*2; } 中 twice(4) 的结果为？",
+      "choices": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "answer": 3,
+      "explanation": "参数x得到4，返回表达式x*2的值8。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "参数x得到4，返回表达式x*2的值8。"
+      ]
+    },
+    {
+      "id": "c-10-code",
+      "lessonId": "c-10",
+      "type": "code",
+      "title": "平方函数",
+      "prompt": "定义int square(int x)。输入-100到100的整数，调用该函数并输出平方。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint square(int x) { return x * x; }\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    printf(\"%d\\n\", square(n));\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "-3\n",
+          "expected": "9\n"
+        },
+        {
+          "input": "0\n",
+          "expected": "0\n"
+        },
+        {
+          "input": "7\n",
+          "expected": "49\n"
+        },
+        {
+          "input": "100\n",
+          "expected": "10000\n"
+        }
+      ],
+      "hints": [
+        "把square定义放在main前。",
+        "平方是x*x，不是x^2；^在C中是按位异或。",
+        "main读取输入后输出square(n)。"
+      ],
+      "explanation": "函数有明确的输入、处理和输出；局部变量只在相应范围使用。"
+    },
+    {
+      "id": "c-11-quiz",
+      "lessonId": "c-11",
+      "type": "quiz",
+      "title": "合法下标",
+      "prompt": "int a[5] 的最后一个合法元素是？",
+      "choices": [
+        "a[5]",
+        "a[4]",
+        "a[1]",
+        "a[6]"
+      ],
+      "answer": 1,
+      "explanation": "5个元素的下标为0、1、2、3、4。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "5个元素的下标为0、1、2、3、4。"
+      ]
+    },
+    {
+      "id": "c-11-code",
+      "lessonId": "c-11",
+      "type": "code",
+      "title": "五个数的最大值",
+      "prompt": "输入5个整数（每个在-1000到1000之间），用数组保存并输出最大值。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    int a[5];\n    for (int i = 0; i < 5; ++i) if (scanf(\"%d\", &a[i]) != 1) return 1;\n    int maximum = a[0];\n    for (int i = 1; i < 5; ++i) if (a[i] > maximum) maximum = a[i];\n    printf(\"%d\\n\", maximum);\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "1 7 3 2 4\n",
+          "expected": "7\n"
+        },
+        {
+          "input": "-5 -2 -8 -1 -3\n",
+          "expected": "-1\n"
+        },
+        {
+          "input": "0 0 0 0 0\n",
+          "expected": "0\n"
+        },
+        {
+          "input": "9 1 2 3 9\n",
+          "expected": "9\n"
+        }
+      ],
+      "hints": [
+        "读取下标0到4这五个位置。",
+        "最大值初始为第一个元素，不要写死为0。",
+        "从下标1遍历，遇到更大的数就更新maximum。"
+      ],
+      "explanation": "数组下标从0开始；算法的初始值也需要覆盖负数等边界。"
+    },
+    {
+      "id": "c-12-quiz",
+      "lessonId": "c-12",
+      "type": "quiz",
+      "title": "预留结束位置",
+      "prompt": "保存10个英文字母构成的C字符串，数组至少需要多少个char？",
+      "choices": [
+        "9",
+        "10",
+        "11",
+        "20"
+      ],
+      "answer": 2,
+      "explanation": "10个字母之外，还要一个位置保存结尾的\\0。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "10个字母之外，还要一个位置保存结尾的\\0。"
+      ]
+    },
+    {
+      "id": "c-12-code",
+      "lessonId": "c-12",
+      "type": "code",
+      "title": "计算单词长度",
+      "prompt": "输入一个仅含英文字母的单词（1到100个字符，无空格），不使用strlen，输出长度。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    char word[101];\n    if (scanf(\"%100s\", word) != 1) return 1;\n    int length = 0;\n    while (word[length] != '\\0') ++length;\n    printf(\"%d\\n\", length);\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "C\n",
+          "expected": "1\n"
+        },
+        {
+          "input": "Hello\n",
+          "expected": "5\n"
+        },
+        {
+          "input": "Embedded\n",
+          "expected": "8\n"
+        },
+        {
+          "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n",
+          "expected": "100\n"
+        }
+      ],
+      "hints": [
+        "使用char数组并为\\0留一个位置。",
+        "从下标0开始逐个判断是否为\\0。",
+        "循环结束时计数器就是字符数，结束标记不计入长度。"
+      ],
+      "explanation": "字符串长度不包括末尾的空字符，但数组容量必须给它留位置。"
+    },
+    {
+      "id": "c-13-quiz",
+      "lessonId": "c-13",
+      "type": "quiz",
+      "title": "修改指向的变量",
+      "prompt": "int a=3; int *p=&a; *p=7; 之后a是多少？",
+      "choices": [
+        "3",
+        "7",
+        "a的地址",
+        "无法确定"
+      ],
+      "answer": 1,
+      "explanation": "p指向a，因此*p=7把a保存的值改成7。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "p指向a，因此*p=7把a保存的值改成7。"
+      ]
+    },
+    {
+      "id": "c-13-code",
+      "lessonId": "c-13",
+      "type": "code",
+      "title": "通过指针交换",
+      "prompt": "输入两个整数（-1000到1000），编写void swap(int *x,int *y)，调用后输出交换后的两个值。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nvoid swap(int *x, int *y) {\n    int temporary = *x;\n    *x = *y;\n    *y = temporary;\n}\n\nint main(void) {\n    int a, b;\n    if (scanf(\"%d %d\", &a, &b) != 2) return 1;\n    swap(&a, &b);\n    printf(\"%d %d\\n\", a, b);\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "2 9\n",
+          "expected": "9 2\n"
+        },
+        {
+          "input": "-3 4\n",
+          "expected": "4 -3\n"
+        },
+        {
+          "input": "7 7\n",
+          "expected": "7 7\n"
+        }
+      ],
+      "hints": [
+        "函数需要两个int指针参数。",
+        "用临时变量保存*x，再赋值。",
+        "在main中传入&a和&b，而不是a和b。"
+      ],
+      "explanation": "指针保存地址；解引用操作访问地址处的数据，前提是地址有效。"
+    },
+    {
+      "id": "c-14-quiz",
+      "lessonId": "c-14",
+      "type": "quiz",
+      "title": "只设置一位",
+      "prompt": "想把flags的第3位设为1，同时保留其他位，应使用？",
+      "choices": [
+        "flags = 3;",
+        "flags = 1u << 3;",
+        "flags |= 1u << 3;",
+        "flags == 3;"
+      ],
+      "answer": 2,
+      "explanation": "按位或赋值只把掩码指定的位设为1，其他位保持原值。直接赋值会覆盖其他位。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "按位或赋值只把掩码指定的位设为1，其他位保持原值。直接赋值会覆盖其他位。"
+      ]
+    },
+    {
+      "id": "c-14-code",
+      "lessonId": "c-14",
+      "type": "code",
+      "title": "设置指定的位",
+      "prompt": "输入无符号整数value（0到255）和bit（0到7），把value的第bit位设为1，以十进制输出结果。",
+      "starter": "#include <stdio.h>\n\nint main(void) {\n    /* 在这里完成练习 */\n    return 0;\n}\n",
+      "solution": "#include <stdio.h>\n\nint main(void) {\n    unsigned int value, bit;\n    if (scanf(\"%u %u\", &value, &bit) != 2) return 1;\n    value |= (1u << bit);\n    printf(\"%u\\n\", value);\n    return 0;\n}\n",
+      "tests": [
+        {
+          "input": "0 3\n",
+          "expected": "8\n"
+        },
+        {
+          "input": "1 3\n",
+          "expected": "9\n"
+        },
+        {
+          "input": "255 3\n",
+          "expected": "255\n"
+        },
+        {
+          "input": "0 7\n",
+          "expected": "128\n"
+        }
+      ],
+      "hints": [
+        "用1u<<bit构造掩码。",
+        "用按位或保留其他已设置的位。",
+        "value |= (1u << bit)，然后以%u输出。"
+      ],
+      "explanation": "先理解位掩码，再读HAL和寄存器代码；普通变量的练习结果不是硬件验证。"
+    },
+    {
+      "id": "stm32-01-quiz",
+      "lessonId": "stm32-01",
+      "type": "quiz",
+      "title": "编译能证明什么",
+      "prompt": "没有连接开发板时，ARM工程编译成功可以证明什么？",
+      "choices": [
+        "LED已经正常闪烁",
+        "串口波特率已经实测正确",
+        "工程成功生成了目标固件",
+        "所有硬件接线正确"
+      ],
+      "answer": 2,
+      "explanation": "编译只验证软件构建；LED、串口与接线需要实板验证。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "编译只验证软件构建；LED、串口与接线需要实板验证。"
+      ]
+    },
+    {
+      "id": "stm32-02-quiz",
+      "lessonId": "stm32-02",
+      "type": "quiz",
+      "title": "库与寄存器",
+      "prompt": "下面哪种说法准确？",
+      "choices": [
+        "HAL不使用寄存器",
+        "SPL就是没有封装的寄存器直写",
+        "HAL和SPL都对外设操作进行了封装",
+        "使用HAL就不需要理解时钟"
+      ],
+      "answer": 2,
+      "explanation": "HAL与SPL都是库；了解时钟、引脚和外设仍是正确使用库的基础。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "HAL与SPL都是库；了解时钟、引脚和外设仍是正确使用库的基础。"
+      ]
+    },
+    {
+      "id": "stm32-03-quiz",
+      "lessonId": "stm32-03",
+      "type": "quiz",
+      "title": "灯亮的条件",
+      "prompt": "为什么“把GPIO写成1，LED一定亮”不准确？",
+      "choices": [
+        "GPIO不能输出1",
+        "LED有效电平取决于具体接法和板级电路",
+        "所有LED都必须写0",
+        "HAL不支持LED"
+      ],
+      "answer": 1,
+      "explanation": "LED的连接方式决定高有效还是低有效，还需要正确配置GPIO与供电。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "LED的连接方式决定高有效还是低有效，还需要正确配置GPIO与供电。"
+      ]
+    },
+    {
+      "id": "stm32-04-quiz",
+      "lessonId": "stm32-04",
+      "type": "quiz",
+      "title": "串口速率估算",
+      "prompt": "在9600 baud、8N1条件下，忽略额外间隔，每字节10位，理想传输速度约为？",
+      "choices": [
+        "9600字节/秒",
+        "960字节/秒",
+        "96字节/秒",
+        "10字节/秒"
+      ],
+      "answer": 1,
+      "explanation": "9600个位时间每秒除以每字节10位，约960字节/秒。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "9600个位时间每秒除以每字节10位，约960字节/秒。"
+      ]
+    },
+    {
+      "id": "stm32-05-quiz",
+      "lessonId": "stm32-05",
+      "type": "quiz",
+      "title": "定时器频率",
+      "prompt": "f_TIM=16 MHz，PSC=15，ARR=999，向上计数更新频率是多少？",
+      "choices": [
+        "16 MHz",
+        "16 kHz",
+        "1 kHz",
+        "250 Hz"
+      ],
+      "answer": 2,
+      "explanation": "16,000,000 / (15+1) / (999+1) = 1000 Hz。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "16,000,000 / (15+1) / (999+1) = 1000 Hz。"
+      ]
+    },
+    {
+      "id": "stm32-06-quiz",
+      "lessonId": "stm32-06",
+      "type": "quiz",
+      "title": "数字范围",
+      "prompt": "无符号12位ADC常见输出码值范围是？",
+      "choices": [
+        "0到12",
+        "0到4095",
+        "1到4096",
+        "0到65535"
+      ],
+      "answer": 1,
+      "explanation": "12位共4096种码值，从0开始编号，所以最大为4095。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "12位共4096种码值，从0开始编号，所以最大为4095。"
+      ]
+    },
+    {
+      "id": "cpp-01-quiz",
+      "lessonId": "cpp-01",
+      "type": "quiz",
+      "title": "引用的行为",
+      "prompt": "C++中 int x=3; int &r=x; r=9; 执行后x为？",
+      "choices": [
+        "3",
+        "9",
+        "地址值",
+        "编译时必然报错"
+      ],
+      "answer": 1,
+      "explanation": "r是x的别名，因此r=9修改的也是x。",
+      "hints": [
+        "先回到本课的核心概念，找出题目在问哪一步。",
+        "逐一排除与实际程序行为不一致的选项。",
+        "r是x的别名，因此r=9修改的也是x。"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "fish-c",
+      "title": "【C语言】《带你学C带你飞》",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/",
+      "kind": "合集入口 · scanf 分P待核实",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "本课看格式化输入：在作者课程中检索“scanf 格式化输入 & 返回值”。公开目录未能确认准确分P，此链接会进入合集首页，不保证直达输入讲解。手机用受限C解释器；完整代码请在电脑GCC中验证。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "pointer",
+      "title": "[C语言] 指针的详解与应用-理论结合实践，真正理解指针！",
+      "author": "江协科技",
+      "url": "https://www.bilibili.com/video/BV1Mb4y1X7dz/",
+      "kind": "单集直达 · 指针补充",
+      "route": "通用 C",
+      "note": "学完变量、数组和函数后，重点看地址、解引用与指针参数。视频为单集；不必一次掌握全部指针用法，手机解释器支持范围以本课练习为准。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "keysking",
+      "title": "【keysking】第0集 超易懂的STM32教程！！",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV12v4y1y7uV/",
+      "kind": "单集直达 · 第0集绪论",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "先看第0集认识STM32学习路线。本链接直达绪论，页面同时是系列合集入口；后续各集有独立BV，不能用?p=集数跳转。视频F103与电脑F446工程的引脚、时钟不同。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-gpio",
+      "title": "【开漏? 推挽? 都是些什么鬼? 动画帮你一网打尽】【STM32入门教程-2024】第5集 关于STM32 GPIO内部的那些事",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV1zG4y1K78S/",
+      "kind": "单集直达 · 第5集GPIO原理",
+      "route": "F103 / HAL · GPIO",
+      "note": "重点看GPIO输入、输出、上拉、开漏与推挽。本集是独立BV；F103引脚与时钟配置不能直接照搬到F446，接线和有效电平要查实际板卡资料。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-pwm",
+      "title": "【STM32】动画讲解轻松学会STM32的PWM",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV1Yx4y1x7xY/",
+      "kind": "单集直达 · 第20集PWM",
+      "route": "F103 / HAL · STM32定时器",
+      "note": "先理解PWM频率与占空比，再看呼吸灯配置。该单集在作者合集标为第20集；F446的定时器时钟、通道和引脚需另行核对，手机测验不代表实机输出已验证。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "atom-hal",
+      "title": "【正点原子】手把手教你学STM32 HAL库开发全集【真人出镜】STM32入门教学视频教程 单片机 嵌入式",
+      "author": "正点原子官方",
+      "url": "https://www.bilibili.com/video/BV1bv4y1R7dp/",
+      "kind": "合集入口 · HAL补充",
+      "route": "多系列 HAL · 非 F446 专用",
+      "note": "原始系列索引，按需查阅；具体课程已另外提供P24、P30、P66、P137直达入口。系列涉及不同芯片与MDK/CubeMX工程，不需要重复安装旧工具，也不能照搬到F446。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "jiang-stm32",
+      "title": "P2｜[1-2] STM32简介",
+      "author": "江协科技",
+      "url": "https://www.bilibili.com/video/BV1th411z7sn/?p=2",
+      "kind": "具体分P · P2",
+      "route": "F103 · 标准外设库 SPL",
+      "note": "本课看P2《[1-2] STM32简介》，认识芯片与片上外设。后续示例使用F103/SPL；SPL也是库，其API不能直接混入F446 HAL工程。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "cpp",
+      "title": "黑马程序员匠心之作|C++教程从0到1入门编程,学习编程不再难",
+      "author": "黑马程序员",
+      "url": "https://www.bilibili.com/video/BV1et411b73Z/",
+      "kind": "合集入口 · 后续路线",
+      "route": "桌面 C++",
+      "note": "用于尚未开放的后续项目路线；先完成C基础，再按项目需要检索“引用 类 构造函数 析构函数 STL”。当前C++衔接课已单独给出P89与P99直达入口。手机C解释器不执行C++。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p2",
+      "title": "P2｜第一个程序",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=2",
+      "kind": "具体分P · P2",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P2《第一个程序》，对应源码、编译与运行。视频中的旧环境不必重复安装；电脑已有GCC，手机练习使用受限C解释器。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p3",
+      "title": "P3｜打印",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=3",
+      "kind": "具体分P · P3",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P3《打印》，重点联系printf、换行与格式占位符；手机解释器仅支持课程列出的基础用法。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p4",
+      "title": "P4｜变量",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=4",
+      "kind": "具体分P · P4",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P4《变量》，重点联系声明、赋值和整数输出；视频其他数据类型的支持范围以手机练习说明为准。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p8",
+      "title": "P8｜字符和字符串",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=8",
+      "kind": "具体分P · P8",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P8《字符和字符串》，配合本课结束标记与输入宽度练习；视频涉及的其他输入输出用法请在电脑完整C环境验证。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p9",
+      "title": "P9｜算术运算符",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=9",
+      "kind": "具体分P · P9",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P9《算术运算符》，重点联系整数除法、余数与运算顺序；按本课测试处理边界值。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p10",
+      "title": "P10｜关系运算符和逻辑运算符",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=10",
+      "kind": "具体分P · P10",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "先看P10《关系运算符和逻辑运算符》，联系比较条件与临界值；再看同课推荐的P11学习分支。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p11",
+      "title": "P11｜if语句",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=11",
+      "kind": "具体分P · P11",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P11《if语句》，配合本课if、else if、else练习；不需要先学switch，视频扩展语法以手机解释器支持范围为准。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p13",
+      "title": "P13｜while语句和do-while语句",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=13",
+      "kind": "具体分P · P13",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P13《while语句和do-while语句》，联系条件检查时机与循环退出；练习仍按本课给定的输入输出规则。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p14",
+      "title": "P14｜for语句和循环嵌套",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=14",
+      "kind": "具体分P · P14",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P14《for语句和循环嵌套》，先掌握初始化、条件、更新与零次循环；嵌套循环可留作后续拓展。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p17",
+      "title": "P17｜数组",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=17",
+      "kind": "具体分P · P17",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P17《数组》，重点联系从0开始的下标与循环遍历；不要越界，手机练习支持范围以题目说明为准。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p21",
+      "title": "P21｜指针",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=21",
+      "kind": "具体分P · P21",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "先看P21《指针》，理解地址与解引用，再看同课江协科技单集补充应用；手机只运行本课支持的基础指针练习。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p28",
+      "title": "P28｜函数",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=28",
+      "kind": "具体分P · P28",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P28《函数》，重点联系函数定义、调用、参数与返回值；复杂库函数或扩展语法请在电脑完整C环境验证。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p54",
+      "title": "P54｜位操作",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=54",
+      "kind": "具体分P · P54",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "先看P54《位操作》，理解按位与、或、异或；这里操作的是普通C变量，不代表已访问STM32寄存器。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p55",
+      "title": "P55｜移位和位操作的应用",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=55",
+      "kind": "具体分P · P55",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "接着看P55《移位和位操作的应用》，联系置位、清位与掩码；真实寄存器需按芯片手册处理，手机练习不验证硬件。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-led",
+      "title": "【STM32入门教程-2025】第2集 点灯大师 点亮你的第一颗小灯 | keysking的stm32教程",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV1s84y1h77Q/",
+      "kind": "单集直达 · 第2集点灯",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "看第2集的GPIO配置与点灯流程，再联系本课逻辑电平。开发板型号、LED引脚和有效电平可能不同，不能直接套用到F446；无板时只学习流程。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-uart-polling",
+      "title": "【keysking的STM32教程】 第8集 STM32的串口通信",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV1Na4y1T7VQ/",
+      "kind": "单集直达 · 第8集串口",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "先看第8集串口通信；作者合集将本集标为“初识串口-轮询模式”。联系波特率、帧格式与阻塞收发，随后看第9集中断模式。F446外设实例、引脚与时钟需重新核对。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-uart-interrupt",
+      "title": "【STM32入门教程-2025】第9集 STM32串口原理与串口中断模式收发 | keysking的stm32教程",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV1bc411J7Tv/",
+      "kind": "单集直达 · 第9集串口中断",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "接着看第9集串口原理与中断收发，比较轮询和中断。该入口不是DMA专题；真实通信仍需开发板、连线和串口工具验证。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-timer",
+      "title": "【STM32】第16集 动画告诉你, STM32的定时器到底怎么回事",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV11u4y1A7gS/",
+      "kind": "单集直达 · 第16集定时器",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "先看第16集理解定时器计数、预分频与更新，再看同课第20集PWM。计算时钟时要按实际F446时钟树确认，不能照抄视频参数。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-adc",
+      "title": "【STM32入门教程】ADC 模拟数字转换 ，超清晰动画讲解",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV13SDWYsE8E/",
+      "kind": "单集直达 · 第24集ADC",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "看作者合集第24集ADC，重点联系分辨率、参考电压与电压换算。F103与F446的ADC配置、通道和引脚不同；手机计算题不能替代实测。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "atom-hal-framework",
+      "title": "P24｜第24讲 基础篇-HAL库框架结构",
+      "author": "正点原子官方",
+      "url": "https://www.bilibili.com/video/BV1bv4y1R7dp/?p=24",
+      "kind": "具体分P · P24",
+      "route": "多系列 HAL · 非 F446 专用",
+      "note": "先看P24《第24讲 基础篇-HAL库框架结构》，建立HAL层次概念；再看P30启动过程。示例工程涉及MDK与不同系列，和当前CubeIDE/F446工程逐项对照。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "atom-startup",
+      "title": "P30｜第30讲 基础篇-STM32启动过程",
+      "author": "正点原子官方",
+      "url": "https://www.bilibili.com/video/BV1bv4y1R7dp/?p=30",
+      "kind": "具体分P · P30",
+      "route": "多系列 HAL · 非 F446 专用",
+      "note": "接着看P30《第30讲 基础篇-STM32启动过程》，联系复位、初始化与main。启动文件、时钟和外设初始化要使用当前F446工程配置。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "atom-usart",
+      "title": "P66｜第66讲 入门篇-STM32的USART介绍和框图",
+      "author": "正点原子官方",
+      "url": "https://www.bilibili.com/video/BV1bv4y1R7dp/?p=66",
+      "kind": "具体分P · P66",
+      "route": "多系列 HAL · USART原理补充",
+      "note": "补充看P66《第66讲 入门篇-STM32的USART介绍和框图》，联系串口外设结构；本入口不承诺覆盖全部DMA内容，不直接复制其他系列的寄存器或HAL配置。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "atom-adc",
+      "title": "P137｜第137讲 入门篇-ADC（1）",
+      "author": "正点原子官方",
+      "url": "https://www.bilibili.com/video/BV1bv4y1R7dp/?p=137",
+      "kind": "具体分P · P137",
+      "route": "多系列 HAL · ADC原理补充",
+      "note": "补充看P137《第137讲 入门篇-ADC（1）》，后续P138～P140为同目录ADC续讲。先建立转换概念，具体分辨率、通道与参考电压按实际F446资料确认。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "cpp-reference",
+      "title": "P89｜06 C++中的引用-引用的基本语法",
+      "author": "黑马程序员",
+      "url": "https://www.bilibili.com/video/BV1et411b73Z/?p=89",
+      "kind": "具体分P · P89",
+      "route": "桌面 C++ · 引用",
+      "note": "看B站P89《06 C++中的引用-引用的基本语法》；标题中的06是章节内编号，不是B站P号。电脑使用g++验证，手机C解释器不执行C++。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "cpp-class",
+      "title": "P99｜16 类和对象-封装-属性和行为作为整体",
+      "author": "黑马程序员",
+      "url": "https://www.bilibili.com/video/BV1et411b73Z/?p=99",
+      "kind": "具体分P · P99",
+      "route": "桌面 C++ · 类与封装",
+      "note": "看B站P99《16 类和对象-封装-属性和行为作为整体》；标题中的16是章节内编号。先理解类的概念，构造析构、RAII与STL留待后续；桌面代码不能直接照搬到MCU。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    }
+  ]
+}

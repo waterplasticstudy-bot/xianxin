@@ -1,0 +1,12 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "从第一行 C 到 STM32 的原生学习空间"
+    },
+    {
+      "name": "gesture_reason",
+      "value": "用于按握持方向调整页面返回按钮，仅在前台启用时使用。"
+    }
+  ]
+}
