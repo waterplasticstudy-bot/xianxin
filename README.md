@@ -59,6 +59,8 @@ node --check apps/desktop/static/app.js
 
 `verify_curriculum.py` 的课程执行验证需要 GCC；HarmonyOS 原生构建和主机测试另见手机端说明。GitHub Actions 运行电脑端回归和公开内容边界检查，不将其算作手机真机验收。
 
+本轮已完成的本机与浏览器检查，以及尚未覆盖的范围，见 [验证记录](docs/validation.md)。
+
 ## 数据与安全
 
 学习数据默认保存在 `apps/desktop/data`。升级前导出备份，不要删除数据目录。密钥由 Windows DPAPI / HarmonyOS AssetStore 单独保存，不进入普通学习备份。
