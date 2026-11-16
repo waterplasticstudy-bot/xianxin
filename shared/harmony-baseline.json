@@ -1,0 +1,203 @@
+{
+  "files": [
+    {
+      "path": "apps/harmony/AppScope/app.json5",
+      "sha256": "84AE3EC315566C6F626187EF1EB54E5C4DA3622D652DCE71B0A0374F2C2C0013"
+    },
+    {
+      "path": "apps/harmony/AppScope/resources/base/element/string.json",
+      "sha256": "0A4CF046CDBBFBDF83DCC0295DA111D0322423415CE02E0AA8FD074836CAF6F4"
+    },
+    {
+      "path": "apps/harmony/AppScope/resources/base/media/app_icon.svg",
+      "sha256": "51094A91EED6EC3B583C489997B9699B56258980CF5DB998A8B75D04A2A6F783"
+    },
+    {
+      "path": "apps/harmony/AppScope/resources/base/media/xianxin_icon.png",
+      "sha256": "4E7AA272EACA9F831112A40CB2F420E6D91D09DE40BA02FAB415DDDCE6741C18"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/module.json5",
+      "sha256": "86F1F960ACC742BDEEDCC4BEBCB7E9C34E3ECA8DD5FA318167BF178123B8FAE3"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/core/Models.ts",
+      "sha256": "1E5E2B6AC3147094740A2AD29D4A0A856C7079B56C7AB012BCDFA45B5D4006B3"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/core/NavigationState.ts",
+      "sha256": "02C8FAC2F2DEDDA3EA01F916BA748D67BE23F75CC11BA122EBD4C4131C4E6FC4"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/core/StateRules.ts",
+      "sha256": "84570DED5D93C144800B5BF1158599721051E851E06DD2A246BCF4940DF214B6"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/engine/LearningC.ts",
+      "sha256": "FE3D9F05824D738ACAE6E8F10EBDB87D45BA061C6D9A4360BF904EC85A9A24C4"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/engine/README.md",
+      "sha256": "BA6E2BFFE6067F509AA25289B70DD24315CED693C365ED9B9F8B69BF496DAAFC"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/entryability/EntryAbility.ets",
+      "sha256": "7A248C42EC6397BFAACF44556DE91221E281C7E91FED739363442C9D9B12E73A"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/pages/Index.ets",
+      "sha256": "BA413B87EA9C935310CBCE95D792C31079ADA69A4FBFA314BE93DFE65EB82C56"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/services/DeepSeek.ets",
+      "sha256": "CFE58B3168A0206130BD2665C925EF1C6AC2AAB31C089FDB578A8ED0FD003B82"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/services/HandExperience.ets",
+      "sha256": "D81911469B483FF937EAFE14BC5827CCA9612B8854632118C24855929FF98900"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/services/MaterialExperience.ets",
+      "sha256": "28E05A94C7B75C544B8C95859FADA48246B37558E4CAA3FB80355E0D24477CC0"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/services/NativeStore.ets",
+      "sha256": "9EDC6810B17A84BF10430FD40180C0442BE03E62E5C3CD8AEE768AB2F1F1D2F9"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/services/StudyController.ets",
+      "sha256": "E84138495FD32BD2EB3025DE2FE0D80D9ED1E09C792282D618149E1D807C661F"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/training/TrainingBank.ts",
+      "sha256": "5712007E4D939CE94DFAED22926059337E8361A896A65A91522B7F2ABBDA0673"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/training/TrainingModels.ts",
+      "sha256": "4D1EF01934CBA58ED94F69A4C1BB554D06635C363D624E0FFE1916ED8398F8E3"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/training/TrainingRules.ts",
+      "sha256": "DCC0AA810FEFF922CC5055124BB47925F8CB08D2544453073136A5B5C3B3D45F"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/ets/workers/PracticeWorker.ets",
+      "sha256": "0705C28D62C148A2AA7A401E02275B2A0934AFA4CFFCFD01A7AF7247ADE8AC7A"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/resources/base/element/color.json",
+      "sha256": "D19C88754D02AEB1FECF9EC25F24F83471ABF7BACB0346145251EF19CA339466"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/resources/base/element/string.json",
+      "sha256": "26BE2CF03A9F47BE53E6C0A1AA71A325CB1596F3196A2DCFC5557A74E028A8C4"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/resources/base/media/nav_ai.svg",
+      "sha256": "48B891A31D1D8222FD450A69A1718689FBE46575DC5D1704269F92A3B728B6A4"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/resources/base/media/nav_courses.svg",
+      "sha256": "7C38624A1E4C863EAE4ED152CAC543EE5061EB099787ADDFF85288FC1A2AC3F6"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/resources/base/media/nav_practice.svg",
+      "sha256": "7BC48CEB94233A858FA6CA3B0C5668C592655AC3D15609D34DD0F0AAF2001407"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/resources/base/media/nav_profile.svg",
+      "sha256": "3CF6FC5F8ACCF2E3473ACB9D2C912030EC1EAF3AB0E7FB59EAB6B3E5E3A1E496"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/resources/base/media/nav_today.svg",
+      "sha256": "C34490F04CED0741E38C5E10679ACD6A3CAE9B090A8D4C89315C553400E88DC6"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/resources/base/profile/main_pages.json",
+      "sha256": "621D1C271CF89755A64364B8E70C65745D9049EBAF18EFA3EBA95A2AE0B4558D"
+    },
+    {
+      "path": "apps/harmony/entry/src/main/resources/rawfile/curriculum.json",
+      "sha256": "EDA383184B47D131B7C8721FE513D14855A8A662CE695DE7BC14E6392BD6C474"
+    },
+    {
+      "path": "apps/harmony/hvigor/hvigor-config.json5",
+      "sha256": "667494EC248166D0296B83ACE7A60B39144BBBB0396D2A44EBF36567BF7E7832"
+    },
+    {
+      "path": "apps/harmony/scripts/Build.ps1",
+      "sha256": "6A0A3D09F83C059F906A554CE1BE18D1FEF85D224E91B8FA6961C1186A8DE2AB"
+    },
+    {
+      "path": "apps/harmony/tests/button-reactivity.test.cjs",
+      "sha256": "E8F31E4F75EBFF1A98525F714D52258CC7C1A87AE3ABE59EF01177B224247D1B"
+    },
+    {
+      "path": "apps/harmony/tests/data-integrity.test.cjs",
+      "sha256": "C82BF55A69BC5B27A2BF5883F770F117126B5F2A1425757D12F41E6DCB01A5CD"
+    },
+    {
+      "path": "apps/harmony/tests/engine.test.cjs",
+      "sha256": "447497CBC3247F3298B45B421174DF61160F2734F112F0CB082AC6386CEB445F"
+    },
+    {
+      "path": "apps/harmony/tests/hand-experience.test.cjs",
+      "sha256": "E5A2976A5120F6824BB4139BE222C61BBF68F5ED45F2B301BD63E4218230DC0A"
+    },
+    {
+      "path": "apps/harmony/tests/material-experience.test.cjs",
+      "sha256": "E64049714A73A55BD9521508B75CF3536E135E0193341A3B68427698E9860580"
+    },
+    {
+      "path": "apps/harmony/tests/navigation.test.cjs",
+      "sha256": "543029031997F64AFDDA611946A5DCA7D53F1CB698810F3863CC1666D4156B67"
+    },
+    {
+      "path": "apps/harmony/tests/services.test.cjs",
+      "sha256": "C22E836C7760E54DB72E8093D362DD7862ED503FC315C662C9573899CC429F97"
+    },
+    {
+      "path": "apps/harmony/tests/state.test.cjs",
+      "sha256": "7EFA03F022412DE5CCDC34010DF441FD8C375F28ACF36EAABDF8767C4C8BBBD8"
+    },
+    {
+      "path": "apps/harmony/tests/training-controller.test.cjs",
+      "sha256": "51469DD798D59B882C3CB364A1EA7AB2CD29C0637804AAAD9C877FFDD2D8E73A"
+    },
+    {
+      "path": "apps/harmony/tests/training.test.cjs",
+      "sha256": "58CF9575C4BB3CF6CBE92A96554E8D17E6D6AC58C34B20262E8AC55478716B8A"
+    },
+    {
+      "path": "apps/harmony/build-profile.json5",
+      "sha256": "0D925E2DE187752A1DC742674627804E3CF4988735BC3386629139AC68AF7200"
+    },
+    {
+      "path": "apps/harmony/hvigorfile.ts",
+      "sha256": "2378C5E0C5246005ADA73A67E8C9834FA08ADB9FFD6FB6C219051456753BED5A"
+    },
+    {
+      "path": "apps/harmony/oh-package.json5",
+      "sha256": "8484FA1FDDAAA96C6400672DF0D6118B21FD94E7496ED06E675731280CC1DE13"
+    },
+    {
+      "path": "apps/harmony/.gitignore",
+      "sha256": "BF221737FDC36563F60124818F644DDF7E78500404796B00A8B7D3520300AA2C"
+    },
+    {
+      "path": "apps/harmony/entry/build-profile.json5",
+      "sha256": "73135BFDC44791D813982E494DBDD4E4E1A82651B51738E34A54EEC38F88017E"
+    },
+    {
+      "path": "apps/harmony/entry/hvigorfile.ts",
+      "sha256": "F547983DCAB9C8FFF87CC3DDEDB22BB98063663C5B8AFE18BB32E131311EC289"
+    },
+    {
+      "path": "apps/harmony/entry/oh-package.json5",
+      "sha256": "C125446C3FA9F28F4A1F9A4B5B9C73528428AE893714C3A88BFCE54ADE1A1051"
+    }
+  ],
+  "revision": "r3",
+  "scope": "Preserved source copied before desktop integration; no device data or signing material",
+  "version": "1.1.6"
+}

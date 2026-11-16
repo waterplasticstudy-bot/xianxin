@@ -1,0 +1,7 @@
+# Preserve audited source bytes, including the mixed line endings in the frozen
+# HarmonyOS baseline. Editors may format new files intentionally in later commits.
+* -text
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary

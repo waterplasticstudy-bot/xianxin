@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "source": "HarmonyOS 1.1.6 r3 bundled curriculum",
+  "resources": [
+    {
+      "id": "fish-c",
+      "title": "【C语言】《带你学C带你飞》",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/",
+      "kind": "合集入口 · scanf 分P待核实",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "本课看格式化输入：在作者课程中检索“scanf 格式化输入 & 返回值”。公开目录未能确认准确分P，此链接会进入合集首页，不保证直达输入讲解。手机用受限C解释器；完整代码请在电脑GCC中验证。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "pointer",
+      "title": "[C语言] 指针的详解与应用-理论结合实践，真正理解指针！",
+      "author": "江协科技",
+      "url": "https://www.bilibili.com/video/BV1Mb4y1X7dz/",
+      "kind": "单集直达 · 指针补充",
+      "route": "通用 C",
+      "note": "学完变量、数组和函数后，重点看地址、解引用与指针参数。视频为单集；不必一次掌握全部指针用法，手机解释器支持范围以本课练习为准。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "keysking",
+      "title": "【keysking】第0集 超易懂的STM32教程！！",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV12v4y1y7uV/",
+      "kind": "单集直达 · 第0集绪论",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "先看第0集认识STM32学习路线。本链接直达绪论，页面同时是系列合集入口；后续各集有独立BV，不能用?p=集数跳转。视频F103与电脑F446工程的引脚、时钟不同。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-gpio",
+      "title": "【开漏? 推挽? 都是些什么鬼? 动画帮你一网打尽】【STM32入门教程-2024】第5集 关于STM32 GPIO内部的那些事",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV1zG4y1K78S/",
+      "kind": "单集直达 · 第5集GPIO原理",
+      "route": "F103 / HAL · GPIO",
+      "note": "重点看GPIO输入、输出、上拉、开漏与推挽。本集是独立BV；F103引脚与时钟配置不能直接照搬到F446，接线和有效电平要查实际板卡资料。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-pwm",
+      "title": "【STM32】动画讲解轻松学会STM32的PWM",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV1Yx4y1x7xY/",
+      "kind": "单集直达 · 第20集PWM",
+      "route": "F103 / HAL · STM32定时器",
+      "note": "先理解PWM频率与占空比，再看呼吸灯配置。该单集在作者合集标为第20集；F446的定时器时钟、通道和引脚需另行核对，手机测验不代表实机输出已验证。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "atom-hal",
+      "title": "【正点原子】手把手教你学STM32 HAL库开发全集【真人出镜】STM32入门教学视频教程 单片机 嵌入式",
+      "author": "正点原子官方",
+      "url": "https://www.bilibili.com/video/BV1bv4y1R7dp/",
+      "kind": "合集入口 · HAL补充",
+      "route": "多系列 HAL · 非 F446 专用",
+      "note": "原始系列索引，按需查阅；具体课程已另外提供P24、P30、P66、P137直达入口。系列涉及不同芯片与MDK/CubeMX工程，不需要重复安装旧工具，也不能照搬到F446。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "jiang-stm32",
+      "title": "P2｜[1-2] STM32简介",
+      "author": "江协科技",
+      "url": "https://www.bilibili.com/video/BV1th411z7sn/?p=2",
+      "kind": "具体分P · P2",
+      "route": "F103 · 标准外设库 SPL",
+      "note": "本课看P2《[1-2] STM32简介》，认识芯片与片上外设。后续示例使用F103/SPL；SPL也是库，其API不能直接混入F446 HAL工程。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "cpp",
+      "title": "黑马程序员匠心之作|C++教程从0到1入门编程,学习编程不再难",
+      "author": "黑马程序员",
+      "url": "https://www.bilibili.com/video/BV1et411b73Z/",
+      "kind": "合集入口 · 后续路线",
+      "route": "桌面 C++",
+      "note": "用于尚未开放的后续项目路线；先完成C基础，再按项目需要检索“引用 类 构造函数 析构函数 STL”。当前C++衔接课已单独给出P89与P99直达入口。手机C解释器不执行C++。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p2",
+      "title": "P2｜第一个程序",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=2",
+      "kind": "具体分P · P2",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P2《第一个程序》，对应源码、编译与运行。视频中的旧环境不必重复安装；电脑已有GCC，手机练习使用受限C解释器。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p3",
+      "title": "P3｜打印",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=3",
+      "kind": "具体分P · P3",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P3《打印》，重点联系printf、换行与格式占位符；手机解释器仅支持课程列出的基础用法。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p4",
+      "title": "P4｜变量",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=4",
+      "kind": "具体分P · P4",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P4《变量》，重点联系声明、赋值和整数输出；视频其他数据类型的支持范围以手机练习说明为准。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p8",
+      "title": "P8｜字符和字符串",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=8",
+      "kind": "具体分P · P8",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P8《字符和字符串》，配合本课结束标记与输入宽度练习；视频涉及的其他输入输出用法请在电脑完整C环境验证。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p9",
+      "title": "P9｜算术运算符",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=9",
+      "kind": "具体分P · P9",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P9《算术运算符》，重点联系整数除法、余数与运算顺序；按本课测试处理边界值。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p10",
+      "title": "P10｜关系运算符和逻辑运算符",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=10",
+      "kind": "具体分P · P10",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "先看P10《关系运算符和逻辑运算符》，联系比较条件与临界值；再看同课推荐的P11学习分支。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p11",
+      "title": "P11｜if语句",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=11",
+      "kind": "具体分P · P11",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P11《if语句》，配合本课if、else if、else练习；不需要先学switch，视频扩展语法以手机解释器支持范围为准。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p13",
+      "title": "P13｜while语句和do-while语句",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=13",
+      "kind": "具体分P · P13",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P13《while语句和do-while语句》，联系条件检查时机与循环退出；练习仍按本课给定的输入输出规则。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p14",
+      "title": "P14｜for语句和循环嵌套",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=14",
+      "kind": "具体分P · P14",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P14《for语句和循环嵌套》，先掌握初始化、条件、更新与零次循环；嵌套循环可留作后续拓展。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p17",
+      "title": "P17｜数组",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=17",
+      "kind": "具体分P · P17",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P17《数组》，重点联系从0开始的下标与循环遍历；不要越界，手机练习支持范围以题目说明为准。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p21",
+      "title": "P21｜指针",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=21",
+      "kind": "具体分P · P21",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "先看P21《指针》，理解地址与解引用，再看同课江协科技单集补充应用；手机只运行本课支持的基础指针练习。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p28",
+      "title": "P28｜函数",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=28",
+      "kind": "具体分P · P28",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "看P28《函数》，重点联系函数定义、调用、参数与返回值；复杂库函数或扩展语法请在电脑完整C环境验证。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p54",
+      "title": "P54｜位操作",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=54",
+      "kind": "具体分P · P54",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "先看P54《位操作》，理解按位与、或、异或；这里操作的是普通C变量，不代表已访问STM32寄存器。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "fish-c-p55",
+      "title": "P55｜移位和位操作的应用",
+      "author": "鱼C-小甲鱼",
+      "url": "https://www.bilibili.com/video/BV17s411N78s/?p=55",
+      "kind": "具体分P · P55",
+      "route": "《带你学C带你飞》· 通用 C",
+      "note": "接着看P55《移位和位操作的应用》，联系置位、清位与掩码；真实寄存器需按芯片手册处理，手机练习不验证硬件。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-led",
+      "title": "【STM32入门教程-2025】第2集 点灯大师 点亮你的第一颗小灯 | keysking的stm32教程",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV1s84y1h77Q/",
+      "kind": "单集直达 · 第2集点灯",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "看第2集的GPIO配置与点灯流程，再联系本课逻辑电平。开发板型号、LED引脚和有效电平可能不同，不能直接套用到F446；无板时只学习流程。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-uart-polling",
+      "title": "【keysking的STM32教程】 第8集 STM32的串口通信",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV1Na4y1T7VQ/",
+      "kind": "单集直达 · 第8集串口",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "先看第8集串口通信；作者合集将本集标为“初识串口-轮询模式”。联系波特率、帧格式与阻塞收发，随后看第9集中断模式。F446外设实例、引脚与时钟需重新核对。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-uart-interrupt",
+      "title": "【STM32入门教程-2025】第9集 STM32串口原理与串口中断模式收发 | keysking的stm32教程",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV1bc411J7Tv/",
+      "kind": "单集直达 · 第9集串口中断",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "接着看第9集串口原理与中断收发，比较轮询和中断。该入口不是DMA专题；真实通信仍需开发板、连线和串口工具验证。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-timer",
+      "title": "【STM32】第16集 动画告诉你, STM32的定时器到底怎么回事",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV11u4y1A7gS/",
+      "kind": "单集直达 · 第16集定时器",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "先看第16集理解定时器计数、预分频与更新，再看同课第20集PWM。计算时钟时要按实际F446时钟树确认，不能照抄视频参数。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "key-adc",
+      "title": "【STM32入门教程】ADC 模拟数字转换 ，超清晰动画讲解",
+      "author": "keysking",
+      "url": "https://www.bilibili.com/video/BV13SDWYsE8E/",
+      "kind": "单集直达 · 第24集ADC",
+      "route": "F103 · STM32CubeIDE / HAL",
+      "note": "看作者合集第24集ADC，重点联系分辨率、参考电压与电压换算。F103与F446的ADC配置、通道和引脚不同；手机计算题不能替代实测。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "atom-hal-framework",
+      "title": "P24｜第24讲 基础篇-HAL库框架结构",
+      "author": "正点原子官方",
+      "url": "https://www.bilibili.com/video/BV1bv4y1R7dp/?p=24",
+      "kind": "具体分P · P24",
+      "route": "多系列 HAL · 非 F446 专用",
+      "note": "先看P24《第24讲 基础篇-HAL库框架结构》，建立HAL层次概念；再看P30启动过程。示例工程涉及MDK与不同系列，和当前CubeIDE/F446工程逐项对照。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "atom-startup",
+      "title": "P30｜第30讲 基础篇-STM32启动过程",
+      "author": "正点原子官方",
+      "url": "https://www.bilibili.com/video/BV1bv4y1R7dp/?p=30",
+      "kind": "具体分P · P30",
+      "route": "多系列 HAL · 非 F446 专用",
+      "note": "接着看P30《第30讲 基础篇-STM32启动过程》，联系复位、初始化与main。启动文件、时钟和外设初始化要使用当前F446工程配置。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "atom-usart",
+      "title": "P66｜第66讲 入门篇-STM32的USART介绍和框图",
+      "author": "正点原子官方",
+      "url": "https://www.bilibili.com/video/BV1bv4y1R7dp/?p=66",
+      "kind": "具体分P · P66",
+      "route": "多系列 HAL · USART原理补充",
+      "note": "补充看P66《第66讲 入门篇-STM32的USART介绍和框图》，联系串口外设结构；本入口不承诺覆盖全部DMA内容，不直接复制其他系列的寄存器或HAL配置。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "atom-adc",
+      "title": "P137｜第137讲 入门篇-ADC（1）",
+      "author": "正点原子官方",
+      "url": "https://www.bilibili.com/video/BV1bv4y1R7dp/?p=137",
+      "kind": "具体分P · P137",
+      "route": "多系列 HAL · ADC原理补充",
+      "note": "补充看P137《第137讲 入门篇-ADC（1）》，后续P138～P140为同目录ADC续讲。先建立转换概念，具体分辨率、通道与参考电压按实际F446资料确认。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "cpp-reference",
+      "title": "P89｜06 C++中的引用-引用的基本语法",
+      "author": "黑马程序员",
+      "url": "https://www.bilibili.com/video/BV1et411b73Z/?p=89",
+      "kind": "具体分P · P89",
+      "route": "桌面 C++ · 引用",
+      "note": "看B站P89《06 C++中的引用-引用的基本语法》；标题中的06是章节内编号，不是B站P号。电脑使用g++验证，手机C解释器不执行C++。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    },
+    {
+      "id": "cpp-class",
+      "title": "P99｜16 类和对象-封装-属性和行为作为整体",
+      "author": "黑马程序员",
+      "url": "https://www.bilibili.com/video/BV1et411b73Z/?p=99",
+      "kind": "具体分P · P99",
+      "route": "桌面 C++ · 类与封装",
+      "note": "看B站P99《16 类和对象-封装-属性和行为作为整体》；标题中的16是章节内编号。先理解类的概念，构造析构、RAII与STL留待后续；桌面代码不能直接照搬到MCU。",
+      "verifiedDate": "2026-11-15",
+      "verification": "B站公开 view / pagelist API 核对标题、UP主与分P；未验证播放"
+    }
+  ],
+  "lessonResources": {
+    "c-01": [
+      "fish-c-p2"
+    ],
+    "c-02": [
+      "fish-c-p3"
+    ],
+    "c-03": [
+      "fish-c-p4"
+    ],
+    "c-04": [
+      "fish-c-p9"
+    ],
+    "c-05": [
+      "fish-c"
+    ],
+    "c-06": [
+      "fish-c-p10",
+      "fish-c-p11"
+    ],
+    "c-07": [
+      "fish-c-p11"
+    ],
+    "c-08": [
+      "fish-c-p14"
+    ],
+    "c-09": [
+      "fish-c-p13"
+    ],
+    "c-10": [
+      "fish-c-p28"
+    ],
+    "c-11": [
+      "fish-c-p17"
+    ],
+    "c-12": [
+      "fish-c-p8"
+    ],
+    "c-13": [
+      "fish-c-p21",
+      "pointer"
+    ],
+    "c-14": [
+      "fish-c-p54",
+      "fish-c-p55"
+    ],
+    "stm32-01": [
+      "keysking",
+      "jiang-stm32"
+    ],
+    "stm32-02": [
+      "atom-hal-framework",
+      "atom-startup"
+    ],
+    "stm32-03": [
+      "key-gpio",
+      "key-led"
+    ],
+    "stm32-04": [
+      "key-uart-polling",
+      "key-uart-interrupt",
+      "atom-usart"
+    ],
+    "stm32-05": [
+      "key-timer",
+      "key-pwm"
+    ],
+    "stm32-06": [
+      "key-adc",
+      "atom-adc"
+    ],
+    "cpp-01": [
+      "cpp-reference",
+      "cpp-class"
+    ],
+    "stm32-hardware": [
+      "keysking"
+    ],
+    "cpp-project": [
+      "cpp"
+    ]
+  }
+}
